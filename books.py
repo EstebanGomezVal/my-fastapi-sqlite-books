@@ -38,7 +38,7 @@ async def get_api_key(api_key: str = Security(api_key_header)) -> str:
 class Book(BaseModel):
     title: str = Field(min_length=1)
     author: str = Field(min_length=1, max_length=100)
-    description: str = Field(min_length=1, max_length=100)
+    description: str = Field(min_length=1, max_length=1000)
     rating: int = Field(gt=-1, lt=101)
 
 # ----- Endpoints -----
